@@ -34,4 +34,13 @@ fun main(args: Array<String>){
         z = z + 1
         println(z)
     }
+
+
+    var k = 1
+    println("Before the loop. k = $k")
+    while (k < 4){
+        println("In the loop. k = $k.")
+        k = k + 1
+    }
+    println("After the loop. k = $k")
 }
