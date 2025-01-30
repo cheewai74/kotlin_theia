@@ -15,6 +15,12 @@ class Dog(val name:String,
                     println("The breed is $breed")
                 }
 
+                // var myProperty: String
+                // get() = field
+                // set(value) {
+                // field = value
+                // }
+
                 var weight = weight_param
                 set(value){
                     if (value > 0) field = value
