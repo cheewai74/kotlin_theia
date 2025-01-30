@@ -1,13 +1,16 @@
 
-fun printSum(int1: Int, int2: Int){
-    val result = int1 + int2
-    println(result)
-}
 /***
  *  datatype_example.kt
  *  1. kotlinc Game.kt -include-runtime -d Game.jar
  *  2. kotlin Game.jar
- ***/
+ * 
+ */
+
+ 
+fun printSum(int1: Int, int2: Int){
+    val result = int1 + int2
+    println(result)
+}
 
 fun max(a: Int, b: Int): Int{
     val maxValue = if ( a > b) a else b
@@ -54,6 +57,18 @@ fun getUserChoice(optionsParam: Array<String>): String{
     return userChoice
     }
 
+fun printResult(userChoice: String, gameChoice: String){
+    val result = when{
+        userChoice == gameChoice -> "Tie"
+        userChoice == "Rock" && gameChoice == "Scissors" -> "You Win"
+        userChoice == "Scissors" && gameChoice == "Paper" -> "You Win"
+        userChoice == "Paper" && gameChoice == "Rock" ->  "You Win"
+        else -> "You lose!"
+    }
+    
+    return println("You choose $userChoice. I choose $gameChoice. $result")
+}
+
 fun main(){
     val options = arrayOf("Rock","Paper","Scissors")
     // updateArray(options)
@@ -68,4 +83,5 @@ fun main(){
 
     val gameChoice = getGameChoice(options)
     val userChoice = getUserChoice(options)
+    printResult(userChoice, gameChoice)
 }
